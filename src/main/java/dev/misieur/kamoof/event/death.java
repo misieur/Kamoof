@@ -26,7 +26,7 @@ public class death implements Listener {
         Player p = event.getEntity();
         if (db.iskamoof(p.getUniqueId())) {
             kamoof.unkamoof(p);
-            p.sendMessage("§a✔ Vous n'êtes maitenant plus déguisé");
+            p.sendMessage("§c❌ Vous n'êtes maitenant plus déguisé");
         }
         Location loc = p.getLocation();
         ItemStack skull = new ItemStack(Material.PLAYER_HEAD);

@@ -1,3 +1,3 @@
 Le plugin du KAMOOF SMP (pas l'original)
 
-![video](https://youtu.be/vREJjiAIlS0)
+[![video](https://img.youtube.com/vi/vREJjiAIlS0/0.jpg)](https://youtu.be/vREJjiAIlS0)

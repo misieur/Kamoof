@@ -1,3 +1,5 @@
 Le plugin du KAMOOF SMP (pas l'original)
 
-![kamoof 1](https://github.com/user-attachments/assets/61f6da68-218d-4b0b-9be7-bbcfc7a31182)
+![mort](https://github.com/user-attachments/assets/5b0811c9-c99d-44d5-b1b6-2f62b8295e6e)
+![kamoof](https://github.com/user-attachments/assets/fe72d6cf-8d45-4d12-80e3-cefa1c829506)
+

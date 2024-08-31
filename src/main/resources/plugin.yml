@@ -1,0 +1,9 @@
+name: kamoofplugin
+version: '${project.version}'
+main: dev.misieur.kamoof.Kamoofplugin
+api-version: '1.13'
+authors: [misieur]
+description: Le plugin du KAMOOF SMP (pas l'original)
+commands:
+  unkamoof:
+    aliases: undisguise

@@ -32,6 +32,7 @@ public final class Kamoofplugin extends JavaPlugin {
 
         saveResource("db.yml",false);
 
+
         saveDefaultConfig();
 
     }

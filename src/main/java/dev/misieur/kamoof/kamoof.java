@@ -18,7 +18,7 @@ public class kamoof {
     public kamoof(Kamoofplugin plugin) {
         this.plugin = plugin;
         DisguiseManager.initialize(plugin, false);
-        provider.allowOverrideChat(false);
+        provider.checkOnlineNames(false);
     }
     public static void kamoofplayer(Player player,UUID kamoof){
         if (db.containsProfile(kamoof)){

@@ -17,14 +17,15 @@ public final class Kamoofplugin extends JavaPlugin {
         getCommand("unkamoof").setExecutor(new unkamoof(this));
 
         Metrics metrics = new Metrics(this, 	23253);
-
-        new UpdateChecker(this, 119296).getVersion(version -> {
-            if (this.getDescription().getVersion().equals(version)) {
-                getLogger().info("Le plugin est à jour !");
-            } else {
-                getLogger().info("Il y a une nouvelle version (la "+version+") vous pouvez la télécharger ici -> https://spigotmc.org/resources/119296/");
-            }
-        });
+        if (getConfig().getBoolean("update-checker")){
+            new UpdateChecker(this, 119296).getVersion(version -> {
+                if (this.getDescription().getVersion().equals(version)) {
+                    getLogger().info("Le plugin est à jour !");
+                } else {
+                    getLogger().info("Il y a une nouvelle version (la "+version+") vous pouvez la télécharger ici -> https://spigotmc.org/resources/119296/");
+                }
+            });
+        }
 
         new db(this);
         new kamoof(this);

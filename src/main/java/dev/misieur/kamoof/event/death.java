@@ -1,7 +1,5 @@
 package dev.misieur.kamoof.event;
 
-import dev.iiahmed.disguise.DisguiseManager;
-import dev.iiahmed.disguise.DisguiseProvider;
 import dev.misieur.kamoof.Kamoofplugin;
 import dev.misieur.kamoof.db;
 import dev.misieur.kamoof.kamoof;

@@ -1,10 +1,7 @@
 package dev.misieur.kamoof.command;
 
-import dev.iiahmed.disguise.DisguiseManager;
-import dev.iiahmed.disguise.DisguiseProvider;
 import dev.misieur.kamoof.Kamoofplugin;
 import dev.misieur.kamoof.db;
-import dev.misieur.kamoof.event.click;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

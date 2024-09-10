@@ -1,1 +1,13 @@
 update-checker: true
+
+undisguise-at-death: true
+
+undisguise-on-disconnection: false
+
+message:
+  join: "§aVous êtes déguisé faites /unkamoof pour ne plus être déguisé"
+  death: "§c❌ Vous n'êtes maitenant plus déguisé"
+  already-disguised: "§c❌ Vous êtes déjà déguisé"
+  not-disguised: "§c❌ Vous n'êtes pas déguisé"
+  disguise: "§a✔ Vous étes maintenant déguisé faites /unkamoof pour ne plus être déguisé"
+  undisguise: "§a✔ Vous n'êtes maitenant plus déguisé"

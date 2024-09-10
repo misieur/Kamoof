@@ -21,10 +21,12 @@ public class unkamoof implements CommandExecutor {
             Player p = (Player) sender;
             if (db.iskamoof(p.getUniqueId())) {
                 kamoof.unkamoof(p);
-                p.sendMessage("§a✔ Vous n'êtes maitenant plus déguisé");
+                String msg = plugin.getConfig().getString("message.undisguise");
+                p.sendMessage(msg);
             }
             else{
-                p.sendMessage("\uD83D\uDE43");
+                String msg = plugin.getConfig().getString("message.not-disguised");
+                p.sendMessage(msg);
             }
             return true;
         }

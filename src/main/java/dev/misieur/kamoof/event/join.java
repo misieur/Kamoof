@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class join implements Listener {
 
@@ -21,14 +22,20 @@ public class join implements Listener {
     @EventHandler
     public void OnPlayerJoin(PlayerJoinEvent event){
         Player p = event.getPlayer();
-        if (db.iskamoof(p.getUniqueId())){
+        if (db.iskamoof(p.getUniqueId())&& !plugin.getConfig().getBoolean("undisguise-on-disconnection")){
             TranslatableComponent joinmassege = new TranslatableComponent("multiplayer.player.joined");
             joinmassege.addWith(db.getName(db.getkamoof(p.getUniqueId())));
             joinmassege.setColor(ChatColor.YELLOW);
             event.setJoinMessage(null);
             Bukkit.spigot().broadcast(joinmassege);
-            kamoof.kamoofplayer(p, db.getkamoof(p.getUniqueId()));
-            p.sendMessage("§aVous êtes déguisé faites /unkamoof pour ne plus être déguisé");
+            String msg = plugin.getConfig().getString("message.join");
+            p.sendMessage(msg);
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    kamoof.kamoofplayer(p, db.getkamoof(p.getUniqueId()));
+                }
+            }.runTaskLater(plugin,1L); //Pour éviter le "You logged in from another location"
         }
         else{
             TranslatableComponent joinmassege = new TranslatableComponent("multiplayer.player.joined");

@@ -28,16 +28,19 @@ public class click implements Listener {
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_AIR){
             if (!p.isSneaking() && item.getType() == Material.PLAYER_HEAD){
                 if (db.iskamoof(p.getUniqueId())){
-                    p.sendMessage("Vous êtes déjà déguisé");
+                    String msg = plugin.getConfig().getString("message.already-disguised");
+                    p.sendMessage(msg);
                 }
                 else{
                     event.setCancelled(true);
                     SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
                     OfflinePlayer Owner = skullMeta.getOwningPlayer();
                     kamoof.kamoofplayer(p,Owner.getUniqueId());
-                    p.sendMessage("§a✔ Vous étes maintenant déguisé faites /unkamoof pour ne plus être déguisé");
+                    String msg = plugin.getConfig().getString("message.disguise");
+                    p.sendMessage(msg);
                     if (item.getAmount()==1){
-                        p.getInventory().remove(item);
+                        p.setItemInHand(null);
+                        //p.updateInventory();
                     }
                     else{
                         item.setAmount(item.getAmount()-1);

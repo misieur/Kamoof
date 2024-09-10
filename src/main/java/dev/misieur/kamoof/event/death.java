@@ -22,15 +22,16 @@ public class death implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         Player p = event.getEntity();
-        if (db.iskamoof(p.getUniqueId())) {
+        if (db.iskamoof(p.getUniqueId())&&plugin.getConfig().getBoolean("undisguise-at-death")) {
             kamoof.unkamoof(p);
-            p.sendMessage("§c❌ Vous n'êtes maitenant plus déguisé");
+            String msg = plugin.getConfig().getString("message.death");
+            p.sendMessage(msg);
         }
         Location loc = p.getLocation();
         ItemStack skull = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
         skullMeta.setOwningPlayer(p);
         skull.setItemMeta(skullMeta);
-        loc.getWorld().dropItem(loc,skull);
+        loc.getWorld().dropItem(loc,skull.clone());
     }
 }

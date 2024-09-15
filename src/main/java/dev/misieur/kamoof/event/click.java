@@ -38,12 +38,12 @@ public class click implements Listener {
                     kamoof.kamoofplayer(p,Owner.getUniqueId());
                     String msg = plugin.getConfig().getString("message.disguise");
                     p.sendMessage(msg);
-                    if (item.getAmount()==1){
-                        p.setItemInHand(null);
-                        //p.updateInventory();
-                    }
-                    else{
-                        item.setAmount(item.getAmount()-1);
+                    if (plugin.getConfig().getBoolean("right-click-remove-head")) {
+                        if (item.getAmount() == 1) {
+                            p.setItemInHand(null);
+                        } else {
+                            item.setAmount(item.getAmount() - 1);
+                        }
                     }
                 }
             }

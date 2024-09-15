@@ -4,6 +4,8 @@ undisguise-at-death: true
 
 undisguise-on-disconnection: false
 
+right-click-remove-head: true
+
 message:
   join: "§aVous êtes déguisé faites /unkamoof pour ne plus être déguisé"
   death: "§c❌ Vous n'êtes maitenant plus déguisé"

@@ -1,6 +1,7 @@
 package dev.misieur.kamoof.event;
 
 import dev.misieur.kamoof.Kamoofplugin;
+import dev.misieur.kamoof.UpdateChecker;
 import dev.misieur.kamoof.db;
 import dev.misieur.kamoof.kamoof;
 import net.md_5.bungee.api.ChatColor;
@@ -43,6 +44,13 @@ public class join implements Listener {
             joinmassege.setColor(ChatColor.YELLOW);
             event.setJoinMessage(null);
             Bukkit.spigot().broadcast(joinmassege);
+        }
+        if (p.isOp() && plugin.getConfig().getBoolean("update-checker")){
+            new UpdateChecker(plugin, 119296).getVersion(version -> {
+                if (!plugin.getDescription().getVersion().equals(version)) {
+                    p.sendMessage("Il y a une nouvelle version (la "+version+") vous pouvez la télécharger ici -> https://spigotmc.org/resources/119296/");
+                }
+            });
         }
     }
 }

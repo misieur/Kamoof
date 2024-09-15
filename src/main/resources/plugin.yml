@@ -4,6 +4,7 @@ main: dev.misieur.kamoof.Kamoofplugin
 api-version: '1.13'
 authors: [misieur]
 description: Le plugin du KAMOOF SMP (pas l'original)
+website: https://github.com/misieur/Kamoof
 commands:
   unkamoof:
     aliases: undisguise

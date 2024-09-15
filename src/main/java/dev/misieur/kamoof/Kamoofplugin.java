@@ -4,6 +4,7 @@ import dev.misieur.kamoof.command.unkamoof;
 import dev.misieur.kamoof.event.click;
 import dev.misieur.kamoof.event.death;
 import dev.misieur.kamoof.event.join;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Kamoofplugin extends JavaPlugin {
@@ -32,9 +33,11 @@ public final class Kamoofplugin extends JavaPlugin {
 
         saveResource("db.yml",false);
 
-
         saveDefaultConfig();
-
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(getTextResource("config.yml"));
+        getConfig().setDefaults(config);
+        getConfig().options().copyDefaults(true);
+        saveConfig();
     }
 
     @Override

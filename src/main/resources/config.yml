@@ -7,7 +7,7 @@ undisguise-on-disconnection: false
 right-click-remove-head: true
 
 message:
-  join: "§aVous êtes déguisé faites /unkamoof pour ne plus être déguisé"
+  join: "§a✔ Vous êtes déguisé faites /unkamoof pour ne plus être déguisé"
   death: "§c❌ Vous n'êtes maitenant plus déguisé"
   already-disguised: "§c❌ Vous êtes déjà déguisé"
   not-disguised: "§c❌ Vous n'êtes pas déguisé"

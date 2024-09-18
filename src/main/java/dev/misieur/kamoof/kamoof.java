@@ -69,4 +69,9 @@ public class kamoof {
         player.setDisplayName(player.getName());
         player.setPlayerListName(player.getName());
     }
+    public static void unkamoofwithoutremovefromdb(Player player) {
+        provider.undisguise(player);
+        player.setDisplayName(player.getName());
+        player.setPlayerListName(player.getName());
+    }
 }
